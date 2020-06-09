@@ -7,16 +7,13 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div>
+  Hello {props.name}!
+  <p>
+  Awesome!
+  </p>
+  </div>
 )
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
