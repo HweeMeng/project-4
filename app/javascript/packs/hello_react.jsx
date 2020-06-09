@@ -6,12 +6,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
+import Button from '@material-ui/core/Button'
+
 const Hello = props => (
   <div>
   Hello {props.name}!
   <p>
   Awesome!
   </p>
+  <Button variant="contained" color="primary">
+     Hello World
+  </Button>
   </div>
 )
 
