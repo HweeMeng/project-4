@@ -1,14 +1,9 @@
 import React from 'react';
 import Singledest from './singledest.jsx';
 import Container from '@material-ui/core/Container'
-class Destination extends React.Component {
-    constructor(){
-        super();
+import axios from 'axios';
 
-        this.state ={
-            destinations:[]
-        }
-    }
+class Destination extends React.Component {
 
     render(){
         return (
