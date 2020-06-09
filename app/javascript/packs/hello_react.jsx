@@ -5,11 +5,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-
+import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 
 const Hello = props => (
   <div>
+  <Container id ="awesome" maxWidth="md">
   Hello {props.name}!
   <p>
   Awesome!
@@ -17,6 +18,7 @@ const Hello = props => (
   <Button variant="contained" color="primary">
      Hello World
   </Button>
+  </Container>
   </div>
 )
 
