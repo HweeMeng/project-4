@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :activities
   get 'main/index'
   resources :destinations
   devise_for :users

@@ -10,10 +10,7 @@
   <%= @destination.city %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @destination.user_id %>
-</p>
+<%= javascript_pack_tag 'showact' %>
 
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
