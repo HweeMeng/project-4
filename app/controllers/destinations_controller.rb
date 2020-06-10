@@ -25,7 +25,7 @@ class DestinationsController < ApplicationController
   # POST /destinations.json
   def create
     @destination = Destination.new(destination_params)
-
+    @destination.user = current_user
     respond_to do |format|
       if @destination.save
         format.html { redirect_to @destination, notice: 'Destination was successfully created.' }
