@@ -8,7 +8,7 @@ class Destination extends React.Component {
     render(){
         return (
             <Container>
-            <p>This is destination component</p>
+            <a href="../destinations/new">Add a new destination</a>
             <Singledest />
             </Container>
             );
