@@ -13,7 +13,9 @@ class Showact extends React.Component {
 
     componentDidMount(){
         console.log('component did mount runs')
-          const url = '/activities.json';
+        var params = window.location.href.slice(-1)
+
+          const url = '/destinations/'+ params + '/activities.json';
           const runWhenDone = (response) => {
             const data = response.data
             console.log("**************")
