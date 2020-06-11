@@ -4,7 +4,11 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
+    if params.has_key?(:destination_id)
+      @activities = Activity.where(destination_id: params[:destination_id])
+    else
     @destinations = Destination.all
+    end
   end
 
   # GET /destinations/1

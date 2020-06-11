@@ -3,3 +3,12 @@
 <%= render 'form', activity: @activity %>
 
 <%= link_to 'Back', activities_path %>
+
+<%= form_with scope: :activity, url: activities_path, local: true do |form| %>
+
+<%= form.collection_select :destination_id, @destinations, :id, :country %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

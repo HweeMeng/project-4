@@ -4,16 +4,20 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    @activities = Activity.where(destination_id: params[:destination_id])
   end
 
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @activity = Activity.find(params[:id])
+    if params[:destination_id].to_i != @activity.destination.id
+    end
   end
 
   # GET /activities/new
   def new
+    @destinations = Destination.where(user_id: current_user)
     @activity = Activity.new
   end
 
