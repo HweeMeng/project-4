@@ -32,10 +32,10 @@ class Singledest extends React.Component {
         const destinations = this.state.destinations.map((destination, index)=>{
             const urlx = '../destinations/' + (index+1)
             console.log("this is urlx: ", urlx)
-            return(<a href={urlx}>
+            return(<div className ='destibox'><a href={urlx}>
                      <p>Country Name: {destination.country}</p>
                      <p>City Name: {destination.city}</p>
-                   </a>)
+                   </a></div>)
         })
         return (<div>{destinations}</div>);
     }

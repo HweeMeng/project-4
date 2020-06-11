@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div style="text-align: center">
 <p>
   <strong>Country:</strong>
   <%= @destination.country %>
@@ -9,8 +10,10 @@
   <strong>City:</strong>
   <%= @destination.city %>
 </p>
+</div>
 
 <%= javascript_pack_tag 'showact' %>
-
+<div style="text-align: center">
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
-<%= link_to 'Back', destinations_path %>
+<%= link_to 'Back', main_index_url %>
+</div>

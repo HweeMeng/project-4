@@ -8,7 +8,9 @@ class Destination extends React.Component {
     render(){
         return (
             <Container>
+            <div className ='destibox'>
             <a href="../destinations/new">Add a new destination</a>
+            </div>
             <Singledest />
             </Container>
             );
