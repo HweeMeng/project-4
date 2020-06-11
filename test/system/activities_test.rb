@@ -17,7 +17,7 @@ class ActivitiesTest < ApplicationSystemTestCase
     fill_in "Destination", with: @activity.destination_id
     fill_in "Details", with: @activity.details
     fill_in "Links", with: @activity.links
-    fill_in "Type", with: @activity.type
+    fill_in "Activity", with: @activity.activity
     click_on "Create Activity"
 
     assert_text "Activity was successfully created"
@@ -31,7 +31,7 @@ class ActivitiesTest < ApplicationSystemTestCase
     fill_in "Destination", with: @activity.destination_id
     fill_in "Details", with: @activity.details
     fill_in "Links", with: @activity.links
-    fill_in "Type", with: @activity.type
+    fill_in "Activity", with: @activity.activity
     click_on "Update Activity"
 
     assert_text "Activity was successfully updated"
