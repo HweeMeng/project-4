@@ -7,7 +7,8 @@ class Destact extends React.Component {
         super();
 
         this.state ={
-            activities:[]
+            activities:[],
+            buttonClicked:false
         }
     }
 
