@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Destact from './destact.jsx';
 
 class Singledest extends React.Component {
     constructor(){
@@ -35,6 +36,7 @@ class Singledest extends React.Component {
             return(<div className ='destibox'><a href={urlx}>
                      <p>Country Name: {destination.country}</p>
                      <p>City Name: {destination.city}</p>
+                     <Destact id={destination.id}/>
                    </a></div>)
         })
         return (<div>{destinations}</div>);
