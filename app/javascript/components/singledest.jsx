@@ -30,7 +30,7 @@ class Singledest extends React.Component {
     render(){
 
         const destinations = this.state.destinations.map((destination, index)=>{
-            const urlx = '../destinations/' + (index+1)
+            const urlx = '../destinations/' + (destination.id)
             console.log("this is urlx: ", urlx)
             return(<div className ='destibox'><a href={urlx}>
                      <p>Country Name: {destination.country}</p>
