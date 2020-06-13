@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'
 import axios from 'axios';
+import Button from '@material-ui/core/Button'
 
 class Destact extends React.Component {
     constructor(){
@@ -9,6 +10,20 @@ class Destact extends React.Component {
         this.state ={
             activities:[],
             buttonClicked:false
+        }
+    }
+
+    handleClick(){
+        console.log("button clicked and this is the current state: ", this.state.buttonClicked)
+        if(this.state.buttonClicked == false){
+        this.state.buttonClicked = true;
+        this.setState({buttonClicked:this.state.buttonClicked})
+        console.log("This is after the set state: ", this.state.buttonClicked)
+        }else{
+        console.log("button clicked and this is the current state: ", this.state.buttonClicked)
+        this.state.buttonClicked = false;
+        this.setState({buttonClicked:this.state.buttonClicked})
+        console.log("This is after the set state: ", this.state.buttonClicked)
         }
     }
 
@@ -39,6 +54,10 @@ class Destact extends React.Component {
                      <strong>{activity.activity}</strong>
                      <p>Details: {activity.details}</p>
                      <p>Reference Links: {activity.links}</p>
+                     <Button color="secondary" onClick={()=>{
+                this.handleClick();
+            }}> Edit!
+                     </Button>
                    </Container>)
         })
         return (<div>{activities}</div>);
