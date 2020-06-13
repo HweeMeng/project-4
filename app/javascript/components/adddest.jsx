@@ -8,7 +8,6 @@ class Adddest extends React.Component {
         super();
 
         this.state ={
-            addDest:false,
             country:"",
             city:""
         }
@@ -28,7 +27,21 @@ class Adddest extends React.Component {
 
     onAdd(event){
         console.log("Clicked YAya!!!")
+        console.log('This.state at click!: ', this.state)
+        axios.post('/destinations', {
+            country: this.state.country,
+            city: this.state.city
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          console.log("axios posted.")
     }
+
+
 
     render(){
         return (
