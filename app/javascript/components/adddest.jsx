@@ -39,6 +39,7 @@ class Adddest extends React.Component {
             console.log(error);
           });
           console.log("axios posted.")
+          window.location.reload(false);
     }
 
 
