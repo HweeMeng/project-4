@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import Destact from './destact.jsx';
+import Destaddact from './destaddact.jsx';
+import Button from '@material-ui/core/Button'
 
 class Singledest extends React.Component {
     constructor(){
         super();
 
         this.state ={
-            destinations:[]
+            destinations:[],
+            addClicked:false
         }
     }
 
@@ -36,6 +39,7 @@ class Singledest extends React.Component {
             return(<div className ='destibox'>
                      <p>Country Name: {destination.country}</p>
                      <p>City Name: {destination.city}</p>
+                     <Destaddact id={destination.id}/>
                      <Destact id={destination.id}/>
                    </div>)
         })
