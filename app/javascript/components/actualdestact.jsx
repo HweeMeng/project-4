@@ -105,8 +105,8 @@ class Actualdestact extends React.Component {
                     Activities links: {this.props.activity.links}
                     <br></br>
                     <div id="destacteditdel">
-                    <EditIcon color="primary" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
-                    <DeleteIcon color="secondary" onClick={()=>{this.deleteAct()}}>Delete!</DeleteIcon>
+                    <EditIcon color="primary" fontSize="small" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
+                    <DeleteIcon color="secondary" fontSize="small" onClick={()=>{this.deleteAct()}}>Delete!</DeleteIcon>
                     </div>
                 </Container>);
         }else{
@@ -118,8 +118,8 @@ class Actualdestact extends React.Component {
             Links: <Input onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
             <br></br>
             <div id="destacteditdel">
-            <SaveAltIcon color="primary" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
-            <CancelIcon color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
+            <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
+            <CancelIcon color="secondary" fontSize="small" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
             </div>
             </Container>
         )}
