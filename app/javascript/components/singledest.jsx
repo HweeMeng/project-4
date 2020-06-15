@@ -3,6 +3,7 @@ import axios from 'axios';
 import Destact from './destact.jsx';
 import Destaddact from './destaddact.jsx';
 import Button from '@material-ui/core/Button'
+import Deletedest from './deletedest.jsx';
 
 class Singledest extends React.Component {
     constructor(){
@@ -31,6 +32,10 @@ class Singledest extends React.Component {
           axios.get(url).then(runWhenDone).catch(whenError)
         }
 
+    deleteDest(){
+        console.log("delete button clicked!! ")
+    }
+
     render(){
 
         const destinations = this.state.destinations.map((destination, index)=>{
@@ -39,6 +44,7 @@ class Singledest extends React.Component {
             return(<div className ='destibox'>
                      <p>Country Name: {destination.country}</p>
                      <p>City Name: {destination.city}</p>
+                     <Deletedest id={destination.id}/>
                      <Destaddact id={destination.id}/>
                      <Destact id={destination.id}/>
                    </div>)

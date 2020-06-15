@@ -50,29 +50,11 @@ class Destact extends React.Component {
         }
 
     render(){
-        // if(this.state.buttonClicked === false){
             const activities = this.state.activities.map((activity, index)=>{
                 console.log("this is activity: ", activity)
                 return(<Actualdestact activity={activity}/>)
             })
                 return (<div>{activities}</div>);
-        // }
-        // else{
-        //     const activities = this.state.activities.map((activity, index)=>{
-        //         console.log("this is activity: ", activity)
-        //         return(<Container >
-        //             <h1>edit has been clicked!</h1>
-        //                  <strong>{activity.activity}</strong>
-        //                  <p>Details: {activity.details}</p>
-        //                  <p>Reference Links: {activity.links}</p>
-        //                  <Button color="secondary" onClick={()=>{
-        //                     this.handleClick();
-        //                 }}> Edit!
-        //                  </Button>
-        //                </Container>)
-        //     })
-        //         return (<div>{activities}</div>);
-        // }
         }
 }
 
