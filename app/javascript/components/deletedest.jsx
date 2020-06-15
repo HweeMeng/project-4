@@ -3,6 +3,8 @@ import axios from 'axios';
 import Destact from './destact.jsx';
 import Destaddact from './destaddact.jsx';
 import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 class Deletedest extends React.Component {
     constructor(){
@@ -28,10 +30,15 @@ class Deletedest extends React.Component {
         const destinations = this.state.destinations.map((destination, index)=>{
             const urlx = '../destinations/' + (destination.id)
             console.log("this is urlx: ", urlx)
-            return(<Button color="secondary" onClick = {(event)=>{this.deleteDest(event)}}>Delete this destination</Button>
+            return(<IconButton aria-label="delete" id = "destDelete">
+                    <DeleteIcon onClick = {(event)=>{this.deleteDest(event)}}/>
+                    </IconButton>
+                // <Button color="secondary" onClick = {(event)=>{this.deleteDest(event)}}>Delete this destination</Button>
                 )
         })
-        return (<Button color="secondary" onClick = {(event)=>{this.deleteDest(event)}}>Delete this destination</Button>
+        return (<IconButton aria-label="delete" id = "destDelete">
+                    <DeleteIcon onClick = {(event)=>{this.deleteDest(event)}}/>
+                    </IconButton>
                 );
     }
 }

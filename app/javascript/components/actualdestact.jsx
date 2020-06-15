@@ -4,6 +4,10 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import TextField from '@material-ui/core/TextField'
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import CancelIcon from '@material-ui/icons/Cancel';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 class Actualdestact extends React.Component {
     constructor(){
@@ -100,8 +104,8 @@ class Actualdestact extends React.Component {
                     <br></br>
                     Activities links: {this.props.activity.links}
                     <br></br>
-                    <Button color="secondary" onClick={()=>{this.handleClick()}}>Edit!</Button>
-                    <Button color="secondary" onClick={()=>{this.deleteAct()}}>Delete!</Button>
+                    <EditIcon color="secondary" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
+                    <DeleteIcon color="secondary" onClick={()=>{this.deleteAct()}}>Delete!</DeleteIcon>
                 </Container>);
         }else{
             return(<Container>
@@ -111,8 +115,8 @@ class Actualdestact extends React.Component {
             <br></br>
             Links: <Input onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
             <br></br>
-            <Button color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</Button>
-            <Button color="secondary" onClick={()=>{this.saveEdit()}}>Save!</Button>
+            <CancelIcon color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
+            <SaveAltIcon color="secondary" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
             </Container>
         )}
 

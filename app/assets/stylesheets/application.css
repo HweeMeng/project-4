@@ -20,4 +20,11 @@
 
  .destibox{
  	 border: 2px solid white;
+ 	 position: relative;
+ }
+
+ #destDelete{
+ 	position: absolute;
+ 	top: 0px;
+ 	right: 0px;
  }

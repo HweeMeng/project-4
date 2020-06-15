@@ -3,6 +3,8 @@ import Container from '@material-ui/core/Container'
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
+import AddIcon from '@material-ui/icons/Add';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 class Destaddact extends React.Component {
     constructor(){
@@ -71,7 +73,7 @@ class Destaddact extends React.Component {
         if(this.state.addClicked ===false){
         return (
             <Container>
-                <Button color="secondary" onClick={()=>{this.addAct()}}>Add new activity</Button>
+                <AddIcon color="secondary" onClick={()=>{this.addAct()}}>Add new activity</AddIcon>
             </Container>
             )
         }else{
@@ -84,8 +86,8 @@ class Destaddact extends React.Component {
                 <br></br>
                 Reference Link!: <Input onChange={(event)=>{this.linksHandler(event);}}/>
                 <br></br>
-                <Button color="secondary" onClick={()=>{this.addAct()}}>Cancel</Button>
-                <Button color="secondary" onClick={()=>{this.addActBtn()}}>Add!!!!</Button>
+                <CancelIcon color="secondary" onClick={()=>{this.addAct()}}>Cancel</CancelIcon>
+                <AddIcon color="secondary" onClick={()=>{this.addActBtn()}}>Add!!!!</AddIcon>
             </Container>
             )
         }
