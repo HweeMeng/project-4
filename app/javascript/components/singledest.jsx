@@ -4,6 +4,7 @@ import Destact from './destact.jsx';
 import Destaddact from './destaddact.jsx';
 import Button from '@material-ui/core/Button'
 import Deletedest from './deletedest.jsx';
+import Destwithedit from './destwithedit.jsx';
 
 class Singledest extends React.Component {
     constructor(){
@@ -42,9 +43,7 @@ class Singledest extends React.Component {
             const urlx = '../destinations/' + (destination.id)
             console.log("this is urlx: ", urlx)
             return(<div className ='destibox'>
-                     <p>Country Name: {destination.country}</p>
-                     <p>City Name: {destination.city}</p>
-                     <Deletedest id={destination.id}/>
+                     <Destwithedit destinations={destination}/>
                      <Destaddact id={destination.id}/>
                      <Destact id={destination.id} />
                    </div>)
