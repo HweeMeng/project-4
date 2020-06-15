@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container'
 import axios from 'axios';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import FlightTakeoffIcon from '@material-ui/icons/FlightTakeoff';
 
 
 class Logout extends React.Component {
@@ -18,7 +19,7 @@ class Logout extends React.Component {
 
     render(){
         return (
-            <ExitToAppIcon color="primary" onClick = {(event)=>{this.logout(event)}}/>
+            <FlightTakeoffIcon color="primary" fontSize="large" onClick = {(event)=>{this.logout(event)}}/>
             );
     }
 }
