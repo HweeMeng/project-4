@@ -10,7 +10,10 @@ class Actualdestact extends React.Component {
 
         this.state ={
             activities:[],
-            buttonClicked:false
+            buttonClicked:false,
+            activity:"",
+            details:"",
+            links:""
         }
     }
 
@@ -28,6 +31,24 @@ class Actualdestact extends React.Component {
         }
     }
 
+    activityHandler(event){
+      console.log("change", event.target.value);
+      this.state.activity = event.target.value
+      console.log("this.state.activity in form", this.state.activity)
+    }
+
+    detailsHandler(event){
+      console.log("change", event.target.value);
+      this.state.details = event.target.value
+      console.log("this.state.details in form", this.state.details)
+    }
+
+    linksHandler(event){
+      console.log("change", event.target.value);
+      this.state.links = event.target.value
+      console.log("this.state.details in form", this.state.links)
+    }
+
     render(){
         if(this.state.buttonClicked === false){
             console.log("component ran", this.props)
@@ -42,11 +63,11 @@ class Actualdestact extends React.Component {
                 </Container>);
         }else{
             return(<Container>
-            Activity: <Input />
+            Activity: <Input onChange={(event)=>{this.activityHandler(event);}}/>
             <br></br>
-            Details: <Input />
+            Details: <Input onChange={(event)=>{this.detailsHandler(event);}}/>
             <br></br>
-            Links: <Input />
+            Links: <Input onChange={(event)=>{this.linksHandler(event);}}/>
             <br></br>
             <Button color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</Button>
             <Button color="secondary" onClick={()=>{this.handleClick()}}>Save!</Button>
