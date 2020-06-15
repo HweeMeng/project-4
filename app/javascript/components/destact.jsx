@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container'
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
+import Actualdestact from './actualdestact.jsx'
 
 class Destact extends React.Component {
     constructor(){
@@ -9,7 +10,8 @@ class Destact extends React.Component {
 
         this.state ={
             activities:[],
-            buttonClicked:false
+            buttonClicked:false,
+            editClicked:false
         }
     }
 
@@ -48,20 +50,30 @@ class Destact extends React.Component {
         }
 
     render(){
-        const activities = this.state.activities.map((activity, index)=>{
-            console.log("this is activity: ", activity)
-            return(<Container >
-                     <strong>{activity.activity}</strong>
-                     <p>Details: {activity.details}</p>
-                     <p>Reference Links: {activity.links}</p>
-                     <Button color="secondary" onClick={()=>{
-                this.handleClick();
-            }}> Edit!
-                     </Button>
-                   </Container>)
-        })
-        return (<div>{activities}</div>);
-    }
+        // if(this.state.buttonClicked === false){
+            const activities = this.state.activities.map((activity, index)=>{
+                console.log("this is activity: ", activity)
+                return(<Actualdestact activity={activity}/>)
+            })
+                return (<div>{activities}</div>);
+        // }
+        // else{
+        //     const activities = this.state.activities.map((activity, index)=>{
+        //         console.log("this is activity: ", activity)
+        //         return(<Container >
+        //             <h1>edit has been clicked!</h1>
+        //                  <strong>{activity.activity}</strong>
+        //                  <p>Details: {activity.details}</p>
+        //                  <p>Reference Links: {activity.links}</p>
+        //                  <Button color="secondary" onClick={()=>{
+        //                     this.handleClick();
+        //                 }}> Edit!
+        //                  </Button>
+        //                </Container>)
+        //     })
+        //         return (<div>{activities}</div>);
+        // }
+        }
 }
 
 export default Destact;
