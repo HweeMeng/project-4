@@ -46,7 +46,7 @@ class Singledest extends React.Component {
                      <p>City Name: {destination.city}</p>
                      <Deletedest id={destination.id}/>
                      <Destaddact id={destination.id}/>
-                     <Destact id={destination.id}/>
+                     <Destact id={destination.id} />
                    </div>)
         })
         return (<div>{destinations}</div>);

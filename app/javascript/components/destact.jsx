@@ -54,7 +54,7 @@ class Destact extends React.Component {
                 console.log("this is activity: ", activity)
                 return(<Actualdestact activity={activity}/>)
             })
-                return (<div>{activities}</div>);
+                return (<div id="activities-container">{activities}</div>);
         }
 }
 

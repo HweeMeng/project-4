@@ -79,7 +79,6 @@ class Destaddact extends React.Component {
         }else{
         return (
             <Container>
-                <h1>Testing!</h1>
                 header!: <Input onChange={(event)=>{this.headerHandler(event);}}/>
                 <br></br>
                 Details: <Input onChange={(event)=>{this.detailsHandler(event);}}/>

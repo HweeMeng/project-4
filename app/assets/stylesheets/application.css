@@ -14,16 +14,27 @@
  *= require_self
  */
 #awesome {
- 	background-color: #424242;
- 	color: white;
+
  }
 
  .destibox{
- 	 border: 2px solid white;
+ 	padding: 2px;
+ 	 border: 1px solid grey;
  	 position: relative;
+ 	 text-align: center;
  }
 
  #destDelete{
+ 	position: absolute;
+ 	top: 0px;
+ 	right: 0px;
+ }
+
+#activities-container{
+	position: relative;
+}
+
+ #destacteditdel{
  	position: absolute;
  	top: 0px;
  	right: 0px;
