@@ -8,7 +8,7 @@ class DestinationsController < ApplicationController
     if params.has_key?(:destination_id)
       @activities = Activity.where(destination_id: params[:destination_id])
     else
-    @destinations = Destination.all
+    @destinations = Destination.where(user_id: current_user)
     end
   end
 

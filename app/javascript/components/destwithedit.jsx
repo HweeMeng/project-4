@@ -11,6 +11,7 @@ import Input from '@material-ui/core/Input'
 import Container from '@material-ui/core/Container'
 import CancelIcon from '@material-ui/icons/Cancel';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import PageviewIcon from '@material-ui/icons/Pageview';
 
 class Destwithedit extends React.Component {
     constructor(){
@@ -92,6 +93,7 @@ class Destwithedit extends React.Component {
                      <p>Country Name: {this.props.destinations.country}</p>
                      <p>City Name: {this.props.destinations.city}</p>
                      <div id="destDelete">
+                     <PageviewIcon color="primary"/>
                      <EditIcon color="primary" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
                      <DeleteIcon color = "secondary" onClick = {(event)=>{this.deleteDest(event)}}/>
                     </div>
