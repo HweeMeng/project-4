@@ -56,7 +56,16 @@ class Actualdestact extends React.Component {
           });
           console.log("axios posted.")
           // window.location.reload(false);
+    }
 
+    deleteAct(){
+        console.log("delete button clicked and the id of this loc is: ", this.props.id)
+          const url = '/activities/'+ this.props.activity.id;
+          const whenError = (error) => {
+              console.log("eerror", error)
+          }
+          axios.delete(url).catch(whenError)
+          window.location.reload(false);
     }
 
     activityHandler(event){
@@ -91,6 +100,7 @@ class Actualdestact extends React.Component {
                     Activities links: {this.props.activity.links}
                     <br></br>
                     <Button color="secondary" onClick={()=>{this.handleClick()}}>Edit!</Button>
+                    <Button color="secondary" onClick={()=>{this.deleteAct()}}>Delete!</Button>
                 </Container>);
         }else{
             return(<Container>
