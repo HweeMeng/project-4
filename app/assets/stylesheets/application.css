@@ -22,6 +22,7 @@
  	 border: 1px solid grey;
  	 position: relative;
  	 text-align: center;
+ 	 border-radius:10px;
  }
 
  #destDelete{
@@ -36,4 +37,14 @@
 
  #destacteditdel{
 
+ }
+
+ #main{
+ 		position: relative;
+ }
+
+ #logout{
+ 	position: relative;
+ 	top: 0px;
+ 	left: 525px;
  }

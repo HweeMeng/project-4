@@ -5,6 +5,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button'
 import Adddest from './adddest.jsx';
 import Adddestpanel from './adddestpanel.jsx';
+import Logout from './logout.jsx';
 
 class Destination extends React.Component {
     constructor(){
@@ -17,7 +18,8 @@ class Destination extends React.Component {
 
     render(){
         return (
-            <Container maxWidth="sm">
+            <Container maxWidth="sm" id="main">
+            <span id="logout" ><Logout/></span>
             <div className ='destibox'>
             <Adddest />
             </div>
