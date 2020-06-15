@@ -74,6 +74,6 @@ class ActivitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def activity_params
-      params.require(:activity).permit(:activity, :details, :links, :destination_id)
+      params.require(:activity).permit(:header, :details, :links, :destination_id)
     end
 end

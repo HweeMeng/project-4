@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container'
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
+import TextField from '@material-ui/core/TextField'
 
 class Actualdestact extends React.Component {
     constructor(){
@@ -11,7 +12,7 @@ class Actualdestact extends React.Component {
         this.state ={
             activities:[],
             buttonClicked:false,
-            activity:"",
+            header:"",
             details:"",
             links:""
         }
@@ -21,11 +22,11 @@ class Actualdestact extends React.Component {
         console.log("button clicked and this is the current state: ", this.state.buttonClicked)
         if(this.state.buttonClicked == false){
         this.state.buttonClicked = true;
-        this.state.activity = this.props.activity.activity;
+        this.state.header = this.props.activity.header;
         this.state.details = this.props.activity.details;
         this.state.links = this.props.activity.links;
         this.setState({buttonClicked:this.state.buttonClicked,
-                activity:this.state.activity,
+                header:this.state.header,
                 details:this.state.details,
                 links:this.state.links
         })
@@ -43,7 +44,7 @@ class Actualdestact extends React.Component {
         console.log('This.state at click!: ', this.state)
         const url = /activities/ + this.props.activity.id
         axios.put(url, {
-            // activity: this.state.activity,
+            header: this.state.header,
             details: this.state.details,
             links: this.state.links,
             destination_id: this.props.id
@@ -55,7 +56,7 @@ class Actualdestact extends React.Component {
             console.log(error);
           });
           console.log("axios posted.")
-          // window.location.reload(false);
+          window.location.reload(false);
     }
 
     deleteAct(){
@@ -68,11 +69,11 @@ class Actualdestact extends React.Component {
           window.location.reload(false);
     }
 
-    activityHandler(event){
+    headerHandler(event){
       console.log("change", event.target.value);
-      this.state.activity = event.target.value
-      this.setState({activity:this.state.activity})
-      console.log("this.state.activity in form", this.state.activity)
+      this.state.header = event.target.value
+      this.setState({header:this.state.header})
+      console.log("this.state.header in form", this.state.header)
     }
 
     detailsHandler(event){
@@ -93,7 +94,7 @@ class Actualdestact extends React.Component {
         if(this.state.buttonClicked === false){
             console.log("component ran", this.props)
                 return (<Container>
-                    Activity name: {this.props.activity.activity}
+                    Activity header: {this.props.activity.header}
                     <br></br>
                     Activity details: {this.props.activity.details}
                     <br></br>
@@ -104,7 +105,7 @@ class Actualdestact extends React.Component {
                 </Container>);
         }else{
             return(<Container>
-            Activity: <Input onChange={(event)=>{this.activityHandler(event);}} value = {this.state.activity}></Input>
+            header: <TextField onChange={(event)=>{this.headerHandler(event);}} value = {this.state.header}></TextField>
             <br></br>
             Details: <Input onChange={(event)=>{this.detailsHandler(event);}} value = {this.state.details}></Input>
             <br></br>

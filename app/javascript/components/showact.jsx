@@ -35,7 +35,7 @@ class Showact extends React.Component {
         const activities = this.state.activities.map((activity, index)=>{
             console.log("this is activity: ", activity)
             return(<Container >
-                     <strong>{activity.activity}</strong>
+                     <strong>{activity.header}</strong>
                      <p>Details: {activity.details}</p>
                      <p>Reference Links: {activity.links}</p>
                    </Container>)

@@ -10,7 +10,7 @@ class Destaddact extends React.Component {
 
         this.state ={
             addClicked:false,
-            activity:"",
+            header:"",
             details:"",
             links:""
         }
@@ -29,10 +29,10 @@ class Destaddact extends React.Component {
         }
     }
 
-    activityHandler(event){
+    headerHandler(event){
       console.log("change", event.target.value);
-      this.state.activity = event.target.value
-      console.log("this.state.activity in form", this.state.activity)
+      this.state.header = event.target.value
+      console.log("this.state.header in form", this.state.header)
     }
 
     detailsHandler(event){
@@ -51,7 +51,7 @@ class Destaddact extends React.Component {
         console.log("Clicked add act!!!")
         console.log('This.state at click!: ', this.state)
         axios.post('/activities', {
-            // activity: this.state.activity,
+            header: this.state.header,
             details: this.state.details,
             links: this.state.links,
             destination_id: this.props.id
@@ -63,7 +63,7 @@ class Destaddact extends React.Component {
             console.log(error);
           });
           console.log("axios posted.")
-          // window.location.reload(false);
+          window.location.reload(false);
 
     }
 
@@ -78,7 +78,7 @@ class Destaddact extends React.Component {
         return (
             <Container>
                 <h1>Testing!</h1>
-                Activity!: <Input onChange={(event)=>{this.activityHandler(event);}}/>
+                header!: <Input onChange={(event)=>{this.headerHandler(event);}}/>
                 <br></br>
                 Details: <Input onChange={(event)=>{this.detailsHandler(event);}}/>
                 <br></br>
