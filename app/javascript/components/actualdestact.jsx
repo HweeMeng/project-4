@@ -21,7 +21,14 @@ class Actualdestact extends React.Component {
         console.log("button clicked and this is the current state: ", this.state.buttonClicked)
         if(this.state.buttonClicked == false){
         this.state.buttonClicked = true;
-        this.setState({buttonClicked:this.state.buttonClicked})
+        this.state.activity = this.props.activity.activity;
+        this.state.details = this.props.activity.details;
+        this.state.links = this.props.activity.links;
+        this.setState({buttonClicked:this.state.buttonClicked,
+                activity:this.state.activity,
+                details:this.state.details,
+                links:this.state.links
+        })
         console.log("This is after the set state: ", this.state.buttonClicked)
         }else{
         console.log("button clicked and this is the current state: ", this.state.buttonClicked)
@@ -31,21 +38,45 @@ class Actualdestact extends React.Component {
         }
     }
 
+    saveEdit(){
+        console.log("Clicked add act!!!")
+        console.log('This.state at click!: ', this.state)
+        const url = /activities/ + this.props.activity.id
+        axios.put(url, {
+            // activity: this.state.activity,
+            details: this.state.details,
+            links: this.state.links,
+            destination_id: this.props.id
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+          console.log("axios posted.")
+          // window.location.reload(false);
+
+    }
+
     activityHandler(event){
       console.log("change", event.target.value);
       this.state.activity = event.target.value
+      this.setState({activity:this.state.activity})
       console.log("this.state.activity in form", this.state.activity)
     }
 
     detailsHandler(event){
       console.log("change", event.target.value);
       this.state.details = event.target.value
+      this.setState({details:this.state.details})
       console.log("this.state.details in form", this.state.details)
     }
 
     linksHandler(event){
       console.log("change", event.target.value);
       this.state.links = event.target.value
+      this.setState({links:this.state.links})
       console.log("this.state.details in form", this.state.links)
     }
 
@@ -63,14 +94,14 @@ class Actualdestact extends React.Component {
                 </Container>);
         }else{
             return(<Container>
-            Activity: <Input onChange={(event)=>{this.activityHandler(event);}}/>
+            Activity: <Input onChange={(event)=>{this.activityHandler(event);}} value = {this.state.activity}></Input>
             <br></br>
-            Details: <Input onChange={(event)=>{this.detailsHandler(event);}}/>
+            Details: <Input onChange={(event)=>{this.detailsHandler(event);}} value = {this.state.details}></Input>
             <br></br>
-            Links: <Input onChange={(event)=>{this.linksHandler(event);}}/>
+            Links: <Input onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
             <br></br>
             <Button color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</Button>
-            <Button color="secondary" onClick={()=>{this.handleClick()}}>Save!</Button>
+            <Button color="secondary" onClick={()=>{this.saveEdit()}}>Save!</Button>
             </Container>
         )}
 
