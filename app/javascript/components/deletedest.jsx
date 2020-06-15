@@ -37,7 +37,7 @@ class Deletedest extends React.Component {
                 )
         })
         return (<IconButton aria-label="delete" id = "destDelete">
-                    <DeleteIcon onClick = {(event)=>{this.deleteDest(event)}}/>
+                    <DeleteIcon color= "secondary" onClick = {(event)=>{this.deleteDest(event)}}/>
                     </IconButton>
                 );
     }

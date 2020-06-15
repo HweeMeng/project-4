@@ -17,9 +17,9 @@ class Destination extends React.Component {
 
     render(){
         return (
-            <Container>
+            <Container maxWidth="sm">
             <div className ='destibox'>
-            <Adddestpanel />
+            <Adddest />
             </div>
             <Singledest />
             </Container>

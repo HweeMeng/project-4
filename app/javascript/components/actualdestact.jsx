@@ -118,8 +118,8 @@ class Actualdestact extends React.Component {
             Links: <Input onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
             <br></br>
             <div id="destacteditdel">
-            <CancelIcon color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
             <SaveAltIcon color="primary" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
+            <CancelIcon color="secondary" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
             </div>
             </Container>
         )}

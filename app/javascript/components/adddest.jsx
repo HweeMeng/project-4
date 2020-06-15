@@ -2,14 +2,32 @@ import React from 'react';
 import Container from '@material-ui/core/Container'
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
-
+import AddIcon from '@material-ui/icons/Add';
+import CancelIcon from '@material-ui/icons/Cancel';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import Input from '@material-ui/core/Input'
 class Adddest extends React.Component {
     constructor(){
         super();
 
         this.state ={
+            addClicked:false,
             country:"",
             city:""
+        }
+    }
+
+    addBtnClicked(){
+        if(this.state.addClicked === false){
+            console.log("before click state: ", this.state.addClicked)
+            this.state.addClicked = true;
+            this.setState({addClicked:this.state.addClicked})
+            console.log("after click state: ", this.state.addClicked)
+        }else{
+            console.log("before click state: ", this.state.addClicked)
+            this.state.addClicked = false;
+            this.setState({addClicked:this.state.addClicked})
+            console.log("after click state: ", this.state.addClicked)
         }
     }
 
@@ -45,15 +63,22 @@ class Adddest extends React.Component {
 
 
     render(){
-        return (
-            <Container>
-                Country: <input onChange={(event)=>{this.countryHandler(event);}}/>
-                <br></br>
-                City: <input onChange={(event)=>{this.cityHandler(event);}}/>
-                <br></br>
-                <Button color="secondary" onClick={(event)=>{this.onAdd(event);}}>Add!</Button>
-            </Container>
-            );
+        if(this.state.addClicked === false){
+            return(
+                <AddIcon color="primary" onClick={()=>this.addBtnClicked()}></AddIcon>
+                )
+        }else{
+            return (
+                <Container>
+                    Country: <Input onChange={(event)=>{this.countryHandler(event);}}/>
+                    <br></br>
+                    City: <Input onChange={(event)=>{this.cityHandler(event);}}/>
+                    <br></br>
+                    <SaveAltIcon color="primary" onClick={(event)=>{this.onAdd(event);}}>Add!</SaveAltIcon>
+                    <CancelIcon color="secondary" onClick={()=>this.addBtnClicked()}/>
+                </Container>
+                );
+        }
     }
 }
 

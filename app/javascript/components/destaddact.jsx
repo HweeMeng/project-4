@@ -73,7 +73,7 @@ class Destaddact extends React.Component {
         if(this.state.addClicked ===false){
         return (
             <Container>
-                <AddIcon color="secondary" onClick={()=>{this.addAct()}}>Add new activity</AddIcon>
+                <AddIcon color="primary" onClick={()=>{this.addAct()}}>Add new activity</AddIcon>
             </Container>
             )
         }else{
@@ -85,8 +85,8 @@ class Destaddact extends React.Component {
                 <br></br>
                 Reference Link!: <Input onChange={(event)=>{this.linksHandler(event);}}/>
                 <br></br>
+                <AddIcon color="primary" onClick={()=>{this.addActBtn()}}>Add!!!!</AddIcon>
                 <CancelIcon color="secondary" onClick={()=>{this.addAct()}}>Cancel</CancelIcon>
-                <AddIcon color="secondary" onClick={()=>{this.addActBtn()}}>Add!!!!</AddIcon>
             </Container>
             )
         }
