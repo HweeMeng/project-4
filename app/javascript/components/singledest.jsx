@@ -12,7 +12,8 @@ class Singledest extends React.Component {
 
         this.state ={
             destinations:[],
-            addClicked:false
+            addClicked:false,
+            showClicked: false
         }
     }
 
@@ -33,19 +34,13 @@ class Singledest extends React.Component {
           axios.get(url).then(runWhenDone).catch(whenError)
         }
 
-    deleteDest(){
-        console.log("delete button clicked!! ")
-    }
-
     render(){
 
         const destinations = this.state.destinations.map((destination, index)=>{
             const urlx = '../destinations/' + (destination.id)
             console.log("this is urlx: ", urlx)
             return(<div className ='destibox'>
-                     <Destwithedit destinations={destination}/>
-                     <Destaddact id={destination.id}/>
-                     <Destact id={destination.id} />
+                     <Destwithedit destinations={destination} />
                    </div>)
         })
         return (<div>{destinations}</div>);

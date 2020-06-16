@@ -21,7 +21,21 @@ class Destwithedit extends React.Component {
             destinations:[],
             editClicked:false,
             country:"",
-            city:""
+            city:"",
+            showClicked:false
+        }
+    }
+
+    showButton(){
+        console.log("show button clicked!! ", this.state.showClicked)
+        if(this.state.showClicked === false){
+        this.state.showClicked = true;
+        this.setState({showClicked:this.state.showClicked})
+        console.log("after set state!! ", this.state.showClicked)
+        }else{
+            this.state.showClicked = false;
+            this.setState({showClicked:this.state.showClicked})
+            console.log("after set state!! ", this.state.showClicked)
         }
     }
 
@@ -87,13 +101,15 @@ class Destwithedit extends React.Component {
     }
 
     render(){
+        if(this.state.showClicked === false){
         if (this.state.editClicked === false){
         console.log('this is where the this.props are for destwithedit!!!!!!!!', this.props.destinations)
+        console.log("!@#$%^&*(^%$#@!#$%^&*  look here!!!", this.props.destinations.id)
             return(<div>
                      <p>Country Name: {this.props.destinations.country}</p>
                      <p>City Name: {this.props.destinations.city}</p>
                      <div id="destDelete">
-                     <PageviewIcon color="primary"/>
+                     <PageviewIcon color="primary" onClick={()=>{this.showButton()}}/>
                      <EditIcon color="primary" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
                      <DeleteIcon color = "secondary" onClick = {(event)=>{this.deleteDest(event)}}/>
                     </div>
@@ -108,8 +124,40 @@ class Destwithedit extends React.Component {
             <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
             <CancelIcon color="secondary" fontSize="small" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
             </div>
+            <Destaddact id={this.props.destinations.id}/>
+            <Destact id={this.props.destinations.id} />
             </Container>
         )}
+    }else{
+        if (this.state.editClicked === false){
+        console.log('this is where the this.props are for destwithedit!!!!!!!!', this.props.destinations)
+        console.log("!@#$%^&*(^%$#@!#$%^&*  look here!!!", this.props.destinations.id)
+            return(<div>
+                     <p>Country Name: {this.props.destinations.country}</p>
+                     <p>City Name: {this.props.destinations.city}</p>
+                     <div id="destDelete">
+                     <PageviewIcon color="primary" onClick={()=>{this.showButton()}}/>
+                     <EditIcon color="primary" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
+                     <DeleteIcon color = "secondary" onClick = {(event)=>{this.deleteDest(event)}}/>
+                    </div>
+                    <Destaddact id={this.props.destinations.id}/>
+                    <Destact id={this.props.destinations.id} />
+                   </div>)
+        }else{
+            return(<Container>
+            Details: <Input onChange={(event)=>{this.countryHandler(event);}} value = {this.state.country}></Input>
+            <br></br>
+            Links: <Input onChange={(event)=>{this.cityHandler(event);}} value = {this.state.city}></Input>
+            <br></br>
+            <div id="destacteditdel">
+            <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
+            <CancelIcon color="secondary" fontSize="small" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
+            </div>
+            <Destaddact id={this.props.destinations.id}/>
+            <Destact id={this.props.destinations.id} />
+            </Container>
+        )}
+    }
     }
 }
 
