@@ -16,7 +16,11 @@
 
 #input, #input2, #input3, #input4, #input5, #input6, #input7, #input8, #input9, #input10, #input11, #input12{
 	color:#2196f3;
-	padding-bottom: 3px
+	padding-bottom: 3px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 100;
 }
 
  #awesome{
