@@ -64,15 +64,14 @@ class Adddest extends React.Component {
 
     render(){
         if(this.state.addClicked === false){
-            return(
-                <AddIcon color="primary" onClick={()=>this.addBtnClicked()}></AddIcon>
+            return(<Button color = "primary" endIcon={<AddIcon/>} onClick={()=>this.addBtnClicked()}>Destination</Button>
                 )
         }else{
             return (
                 <Container>
-                    Country: <Input onChange={(event)=>{this.countryHandler(event);}}/>
+                    Country: <Input id="input" onChange={(event)=>{this.countryHandler(event);}}/>
                     <br></br>
-                    City: <Input onChange={(event)=>{this.cityHandler(event);}}/>
+                    City: <Input id="input2" onChange={(event)=>{this.cityHandler(event);}}/>
                     <br></br>
                     <SaveAltIcon color="primary" onClick={(event)=>{this.onAdd(event);}}>Add!</SaveAltIcon>
                     <CancelIcon color="secondary" onClick={()=>this.addBtnClicked()}/>

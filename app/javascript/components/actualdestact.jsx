@@ -98,11 +98,11 @@ class Actualdestact extends React.Component {
         if(this.state.buttonClicked === false){
             console.log("component ran", this.props)
                 return (<Container>
-                    Activity header: {this.props.activity.header}
+                    Activity: {this.props.activity.header}
                     <br></br>
-                    Activity details: {this.props.activity.details}
+                    Details: {this.props.activity.details}
                     <br></br>
-                    Activities links: {this.props.activity.links}
+                    Links: {this.props.activity.links}
                     <br></br>
                     <div id="destacteditdel">
                     <EditIcon color="primary" fontSize="small" onClick={()=>{this.handleClick()}}>Edit!</EditIcon>
@@ -111,11 +111,11 @@ class Actualdestact extends React.Component {
                 </Container>);
         }else{
             return(<Container>
-            header: <TextField onChange={(event)=>{this.headerHandler(event);}} value = {this.state.header}></TextField>
+            Activity: <Input id="input10" onChange={(event)=>{this.headerHandler(event);}} value = {this.state.header}></Input>
             <br></br>
-            Details: <Input onChange={(event)=>{this.detailsHandler(event);}} value = {this.state.details}></Input>
+            Details: <Input  id="input11" onChange={(event)=>{this.detailsHandler(event);}} value = {this.state.details}></Input>
             <br></br>
-            Links: <Input onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
+            Links: <Input  id="input12" onChange={(event)=>{this.linksHandler(event);}} value = {this.state.links}></Input>
             <br></br>
             <div id="destacteditdel">
             <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>

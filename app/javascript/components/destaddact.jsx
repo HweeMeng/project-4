@@ -73,17 +73,17 @@ class Destaddact extends React.Component {
         if(this.state.addClicked ===false){
         return (
             <Container>
-                <AddIcon color="primary" onClick={()=>{this.addAct()}}>Add new activity</AddIcon>
+                <Button size="small" color = "primary" endIcon={<AddIcon/>} onClick={()=>{this.addAct()}}>Activity</Button>
             </Container>
             )
         }else{
         return (
             <Container>
-                header!: <Input onChange={(event)=>{this.headerHandler(event);}}/>
+                Activity: <Input id="input7" onChange={(event)=>{this.headerHandler(event);}}/>
                 <br></br>
-                Details: <Input onChange={(event)=>{this.detailsHandler(event);}}/>
+                Details: <Input  id="input8" onChange={(event)=>{this.detailsHandler(event);}}/>
                 <br></br>
-                Reference Link!: <Input onChange={(event)=>{this.linksHandler(event);}}/>
+                Links: <Input  id="input9" onChange={(event)=>{this.linksHandler(event);}}/>
                 <br></br>
                 <AddIcon color="primary" onClick={()=>{this.addActBtn()}}>Add!!!!</AddIcon>
                 <CancelIcon color="secondary" onClick={()=>{this.addAct()}}>Cancel</CancelIcon>

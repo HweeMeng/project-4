@@ -116,9 +116,9 @@ class Destwithedit extends React.Component {
                    </div>)
         }else{
             return(<Container>
-            Details: <Input onChange={(event)=>{this.countryHandler(event);}} value = {this.state.country}></Input>
+            Country: <Input id="input3" onChange={(event)=>{this.countryHandler(event);}} value = {this.state.country}></Input>
             <br></br>
-            Links: <Input onChange={(event)=>{this.cityHandler(event);}} value = {this.state.city}></Input>
+            City: <Input id="input4" onChange={(event)=>{this.cityHandler(event);}} value = {this.state.city}></Input>
             <br></br>
             <div id="destacteditdel">
             <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
@@ -144,9 +144,9 @@ class Destwithedit extends React.Component {
                    </div>)
         }else{
             return(<Container>
-            Details: <Input onChange={(event)=>{this.countryHandler(event);}} value = {this.state.country}></Input>
+            Country: <Input id="input5" onChange={(event)=>{this.countryHandler(event);}} value = {this.state.country}></Input>
             <br></br>
-            Links: <Input onChange={(event)=>{this.cityHandler(event);}} value = {this.state.city}></Input>
+            City: <Input id="input6" onChange={(event)=>{this.cityHandler(event);}} value = {this.state.city}></Input>
             <br></br>
             <div id="destacteditdel">
             <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>

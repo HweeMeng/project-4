@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+#input, #input2, #input3, #input4, #input5, #input6, #input7, #input8, #input9, #input10, #input11, #input12{
+	color:#2196f3;
+	padding-bottom: 3px
+}
+
+ #awesome{
+ 	color:#4153b6;
+ }
+
 .welcome{
 	text-align: center;
 }
@@ -50,7 +60,7 @@
  #logout{
  	position: relative;
  	top: 0px;
- 	left: 525px;
+ 	left: 450px;
  }
 
  .login{

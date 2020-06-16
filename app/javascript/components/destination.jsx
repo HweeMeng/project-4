@@ -23,7 +23,7 @@ class Destination extends React.Component {
             <div className ='destibox'>
             <Adddest />
             </div>
-            <Singledest />
+            <Singledest className="allOfBody"/>
             </Container>
             );
     }

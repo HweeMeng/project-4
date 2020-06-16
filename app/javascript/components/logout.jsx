@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'
+import Button from '@material-ui/core/Button'
 import axios from 'axios';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import FlightTakeoffIcon from '@material-ui/icons/FlightTakeoff';
@@ -18,8 +19,9 @@ class Logout extends React.Component {
     }
 
     render(){
-        return (
-            <FlightTakeoffIcon color="primary" fontSize="large" onClick = {(event)=>{this.logout(event)}}/>
+        return (<div>
+            <Button color="primary" endIcon={<FlightTakeoffIcon></FlightTakeoffIcon>} onClick = {(event)=>{this.logout(event)}} fontSize="large" >logout</Button>
+            </div>
             );
     }
 }
