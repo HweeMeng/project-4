@@ -124,8 +124,7 @@ class Destwithedit extends React.Component {
             <SaveAltIcon color="primary" fontSize="small" onClick={()=>{this.saveEdit()}}>Save!</SaveAltIcon>
             <CancelIcon color="secondary" fontSize="small" onClick={()=>{this.handleClick()}}>Cancel!</CancelIcon>
             </div>
-            <Destaddact id={this.props.destinations.id}/>
-            <Destact id={this.props.destinations.id} />
+
             </Container>
         )}
     }else{

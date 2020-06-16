@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  */
-#awesome {
-
- }
+.welcome{
+	text-align: center;
+}
 
  body{
  	background-image: url('https://66.media.tumblr.com/4473826397d286134aadd294bd816af7/tumblr_ntalo41wzy1qele20o1_r1_1280.gifv')
@@ -65,6 +65,11 @@
  .logo{
  	 	margin: 0px auto;
  	 	width:200px;
+ }
+
+  .logo2{
+ 	 	margin: 0px auto;
+ 	 	width:100px;
  }
 
  #x, #y, #u, #v, #w {

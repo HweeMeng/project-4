@@ -7,10 +7,12 @@
 <%= image_tag('logo2.png', :class => "logo")%>
 </div>
 
-<br></br>
+<div >
+	<h5 class="welcome">Welcome to your one-stop travel itinery planner</h5>
+	<h6 class="welcome">Please log in or sign up to continue</h6>
+</div>
 
 <div class ="login">
-
 <div>
 	<div class="tab">
 	  <button class="tablinks" onclick="openCity(event, 'Login')" id="defaultOpen">Login</button>
@@ -61,10 +63,10 @@
 		  <div class="actions">
 		    <%= f.submit "Sign up", :class => "waves-effect waves-light btn-small blue lighten-2" %>
 		  </div>
+
+		  <%= link_to "Forgot your password?", new_password_path(resource_name) %>
 		<% end %>
 	</div>
 
 </div>
-
-<%= render "devise/shared/links" %>
 </div>
