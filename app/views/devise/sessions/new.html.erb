@@ -23,13 +23,13 @@
 	<div id="Login" class="tabcontent">
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 		  <div class="field">
-		    <%= f.label :email%><br />
-		    <%= f.email_field :email, autofocus: true, autocomplete: "email" , :id => "x"%>
+		    <%= f.label :email %><br />
+		    <%= f.email_field :email, autofocus: true, autocomplete: "email" , :id => "x", value:'guest@email.com' %>
 		  </div>
 
 		  <div class="field">
 		    <%= f.label :password %><br />
-		    <%= f.password_field :password, autocomplete: "current-password" , :id => "y"%>
+		    <%= f.password_field :password, autocomplete: "current-password" , :id => "y", value:'Password' %>
 		  </div>
 
 		  <div class="actions">
